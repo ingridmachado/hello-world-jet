@@ -5,11 +5,16 @@
 /*
  * Your incidents ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'jquery'],
- function(oj, ko, $) {
+define(['ojs/ojcore', 'knockout', 'jquery', 'text!data/data.json', 'ojs/ojchart'],
+ function(oj, ko, $, file) {
   
     function IncidentsViewModel() {
       var self = this;
+      
+      var data = JSON.parse(file);
+      
+      self.datasource = ko.observableArray(data);
+      
       // Below are a subset of the ViewModel methods invoked by the ojModule binding
       // Please reference the ojModule jsDoc for additional available methods.
 
