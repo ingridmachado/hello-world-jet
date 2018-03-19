@@ -5,11 +5,13 @@
 /*
  * Your incidents ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'jquery', 'text!data/data.json', 'ojs/ojchart'],
+define(['ojs/ojcore', 'knockout', 'jquery', 'text!data/data.json', 'ojs/ojchart', 'ojs/ojselectcombobox'],
  function(oj, ko, $, file) {
   
     function IncidentsViewModel() {
       var self = this;
+      
+      self.val = ko.observable("pie");
       
       var data = JSON.parse(file);
       
