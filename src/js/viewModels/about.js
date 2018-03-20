@@ -5,11 +5,17 @@
 /*
  * Your about ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'jquery'],
+define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojgauge', 'ojs/ojinputnumber'],
  function(oj, ko, $) {
   
     function AboutViewModel() {
       var self = this;
+      
+      self.value10  = ko.observable(80);
+      self.label = {text: 'Sales'};
+      self.step = ko.observable(2);
+      self.currentValue = ko.observable(0);
+      
       // Below are a subset of the ViewModel methods invoked by the ojModule binding
       // Please reference the ojModule jsDoc for additional available methods.
 

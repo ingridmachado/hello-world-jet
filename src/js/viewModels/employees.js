@@ -7,13 +7,18 @@
 /**
  * employees module
  */
-define(['ojs/ojcore', 'knockout'
+define(['ojs/ojcore', 'knockout', 'ojs/ojpictochart'
 ], function (oj, ko) {
     /**
      * The view model for the main content view template
      */
     function employeesContentViewModel() {
         var self = this;
+        
+        self.pictoChartItems = ko.observableArray([
+        {name: 'Have Sleep Problems', shape: 'human', count:7, color: '#ed6647'},
+        {name: 'Sleep Well', shape: 'human', count: 3}
+        ]);
     }
     
     return employeesContentViewModel;

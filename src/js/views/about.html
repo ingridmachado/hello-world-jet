@@ -4,7 +4,21 @@
  -->
 <div class="oj-hybrid-padding">
   <h1>About Content Area</h1>
-  <div>
-      To change the content of this section, you will make edits to the about.html file located in the /js/views folder.
-  </div>
+  
+   <oj-input-number id="inputnumber-id"
+                         max= "100"
+                         min= "0"
+                         step= "[[step]]" 
+                         value="{{currentValue}}">
+        </oj-input-number>
+  
+  <oj-status-meter-gauge 
+                  id="gauge10"
+                  min="0" 
+                  max="100" 
+                  value="{{currentValue}}" 
+                  orientation="circular"
+                  label="[[label]]"
+                  style="align:center;margin-top:5px;margin-bottom:5px;height:100px;width:45%;">
+                </oj-status-meter-gauge>
 </div>
