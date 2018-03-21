@@ -1,0 +1,18 @@
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<div class="oj-hybrid-padding">
+    <h1>dataModule</h1>
+    
+    <oj-table id='table' aria-label='Countries Table'
+              data='[[datasource]]'
+              columns-default.sortable='disabled'
+              columns='[
+                {"headerText": "Name", "field": "name"},
+                {"headerText": "Population", "field": "population"},
+                {"headerText": "Capital", "field": "capital"}]'
+    </oj-table>
+</div>

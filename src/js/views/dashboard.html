@@ -1,10 +1,16 @@
 <!--
  Copyright (c) 2014, 2018, Oracle and/or its affiliates.
  The Universal Permissive License (UPL), Version 1.0
- -->
+-->
 <div class="oj-hybrid-padding">
-  <h1>Dashboard Content Area</h1>
-  <div>
-      To change the content of this section, you will make edits to the dashboard.html file located in the /js/views folder.
-  </div>
+    <h1>Dashboard Content Area</h1>
+
+    <oj-table id='table' aria-label='Departments Table'
+              data='[[dataSource]]' 
+              columns-default.sortable='disabled' 
+              columns='[
+              {"headerText": "Name", "field": "name"},
+              {"headerText": "Population", "field": "population"},
+              {"headerText": "Capital", "field": "capital"}]'>
+    </oj-table>
 </div>

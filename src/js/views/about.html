@@ -39,17 +39,17 @@
               "field": "ManagerId"}]'
               style='width: 100%; height:100%;'>
     </oj-table>
-    
+
     <oj-tree-view id="treeview" 
-                      data="[[data]]" 
-                      item.renderer="[[oj.KnockoutTemplateUtils.getRenderer('item_template', true)]]" 
-                      selection-mode="multiple" 
-                      aria-label="Tree View with JSON Data">
-        </oj-tree-view>
-        
-        <script type="text/html" id="item_template">
-          <li>
+                  data="[[data]]" 
+                  item.renderer="[[oj.KnockoutTemplateUtils.getRenderer('item_template', true)]]" 
+                  selection-mode="multiple" 
+                  aria-label="Tree View with JSON Data">
+    </oj-tree-view>
+
+    <script type="text/html" id="item_template">
+        <li>
             <span class="oj-treeview-item-icon"></span><span class="oj-treeview-item-text" data-bind="text: title"></span>
-          </li>
-        </script>
+        </li>
+    </script>
 </div>
