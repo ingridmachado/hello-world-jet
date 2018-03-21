@@ -5,7 +5,7 @@
 /*
  * Your about ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojgauge', 'ojs/ojinputnumber'],
+define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojgauge', 'ojs/ojinputnumber','ojs/ojtable', 'ojs/ojarraydataprovider', 'ojs/ojtreeview', 'ojs/ojjsontreedatasource'],
  function(oj, ko, $) {
   
     function AboutViewModel() {
@@ -15,6 +15,115 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojgauge', 'ojs/ojinputnumber'],
       self.label = {text: 'Sales'};
       self.step = ko.observable(2);
       self.currentValue = ko.observable(0);
+      
+      var deptArray = [{DepartmentId: 1001, DepartmentName: 'ADFPM 1001 neverending', LocationId: 200, ManagerId: 300},
+        {DepartmentId: 556, DepartmentName: 'BB', LocationId: 200, ManagerId: 300},
+        {DepartmentId: 10, DepartmentName: 'Administration', LocationId: 200, ManagerId: 300}];
+    
+      self.dataprovider = new oj.ArrayDataProvider(deptArray, {idAttribute: 'DepartmentId'});
+      
+      var jsonData = [{
+          "attr": {
+            "title": "News",
+            "id": "news"
+          }
+        }, {
+          "attr": {
+            "title": "Blogs",
+            "id": "blogs"
+          },
+          "children": [{
+            "attr": {
+              "title": "Today",
+              "id": "today"
+            }
+          }, {
+            "attr": {
+              "title": "Yesterday",
+              "id": "yesterday"
+            }
+          }, {
+            "attr": {
+              "title": "Archive",
+              "id": "archive"
+            }
+          }]
+        }, {
+          "attr": {
+            "title": "Links",
+            "id": "links"
+          },
+          "children": [{
+            "attr": {
+              "title": "Oracle",
+              "id": "oracle"
+            },
+            "children": [{
+              "attr": {
+                "title": "USA",
+                "id": "usa"
+              },
+              "children": [{
+                "attr": {
+                  "title": "Northeast",
+                  "id": "northeast"
+                }
+              }, {
+                "attr": {
+                  "title": "Midwest",
+                  "id": "midwest"
+                }
+              }, {
+                "attr": {
+                  "title": "South",
+                  "id": "south"
+                }
+              }, {
+                "attr": {
+                  "title": "West",
+                  "id": "west"
+                }
+              }]
+            }, {
+              "attr": {
+                "title": "Europe",
+                "id": "europe"
+              }
+            }, {
+              "attr": {
+                "title": "Asia",
+                "id": "asia"
+              },
+              "children": [{
+                "attr": {
+                  "title": "Japan",
+                  "id": "japan"
+                }
+              }, {
+                "attr": {
+                  "title": "China",
+                  "id": "china"
+                }
+              }, {
+                "attr": {
+                  "title": "India",
+                  "id": "india"
+                }
+              }]
+            }]
+          }, {
+            "attr": {
+              "title": "IBM",
+              "id": "ibm"
+            }
+          }, {
+            "attr": {
+              "title": "Microsoft",
+              "id": "microsoft"
+            },
+          }]
+        }];
+        this.data = new oj.JsonTreeDataSource(jsonData);
       
       // Below are a subset of the ViewModel methods invoked by the ojModule binding
       // Please reference the ojModule jsDoc for additional available methods.
