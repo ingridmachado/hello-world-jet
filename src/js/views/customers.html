@@ -20,4 +20,29 @@
                     
       </div>
   </div>
+  
+  <h3>1. Default HTML5 date input element</h3>
+  <div>
+      <input type="date" />
+  </div>
+  
+  <h3>2. Default ojInputDate</h3>
+  <div>
+      <oj-input-date type="{{date}}" />
+  </div>
+  
+  <h3>3. ojInputDate with default converter</h3>
+  <div>
+      <oj-input-date type="{{date}}"
+                     date-picker.week-display='number'></oj-input-date>
+  </div>
+  
+  <h3>4. ojInputDate with conter options</h3>
+  <div>
+      <oj-input-date type="{{date}}"
+                     date-picker.week-display='number'
+                     converter ='{
+                        "type": "datetime",
+                        "options": {"year": "numeric", "month": "long", "day": "numeric"}}'></oj-input-date>
+  </div>
 </div>

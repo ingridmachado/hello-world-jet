@@ -5,11 +5,15 @@
 /*
  * Your customer ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'jquery'],
+define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojdatetimepicker'],
  function(oj, ko, $) {
   
     function CustomerViewModel() {
       var self = this;
+      
+      self.date = ko.observable();
+      self.dateTime = ko.observable();
+      self.time = ko.observable();
       // Below are a subset of the ViewModel methods invoked by the ojModule binding
       // Please reference the ojModule jsDoc for additional available methods.
 
