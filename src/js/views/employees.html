@@ -17,5 +17,53 @@ and open the template in the editor.
   <div style="display:inline-block; vertical-align:middle; font-weight:bold">
             <span style="color:#333333; font-size:1.1em">7 out of 10 college students</span><br>
             <span style="color:#ed6647; font-size:1.3em">have sleep problems.</span>
-          </div> 
+          </div>
+  
+  <div class="oj-hybrid-padding">
+      <oj-tab-bar 
+          id="navlist" 
+          edge="top" 
+          selection="{{selectedItem}}">
+          <ul>
+              <li id="home"><a href="#" id="home-tab">Home Page</a></li>
+              <li id="gettingstarted"><a href="#" id="gettingstarted-tab">Getting Started</a></li>
+              <li id="settings"><a href="#" id="settings-tab">Settings</a></li>
+          </ul>
+      </oj-tab-bar>
+      <!-- Tab bar id must match Switcher slot -->
+      <oj-switcher value="[[selectedItem]]">
+          <div slot="home" id="home-tab-panel">
+              <div>
+                  <h3>Home page content area</h3>
+              </div>
+          </div>
+          <div slot="gettingstarted" id="gettingstarted-tab-panel">
+              <div>
+                  <h3>Getting Started page content area</h3>
+              </div>
+          </div>
+          <div slot="settings" id="settings-tab-panel">
+              <div>
+                  <h3>Settings page content area</h3>
+              </div>
+          </div>
+      </oj-switcher>
+      
+      <div id="filmStripDiv" class="oj-panel" style="margin: 20px;">
+          <oj-film-strip id="filmStrip" 
+                         aria-label="Set of chemicals" 
+                         arrow-placement="[[currentNavArrowPlacement]]"
+                         arrow-visibility="[[currentNavArrowVisibility]]">
+              <oj-bind-for-each data="[[chemicals]]" as="chemical">
+                   <!-- Template tag used for oj-bind-for-each -->
+                   <template>
+                        <span class="oj-panel oj-panel-alt4" >
+                            <oj-bind-text value="[[chemical.data.name]]"></oj-bind-text>
+                        </span>
+                   </template>
+                </oj-bind-for-each>
+          </oj-film-strip>
+      </div> <!-- end filmStripDiv -->
+        </div>
+  </div>
 </div>
